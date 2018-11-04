@@ -144,9 +144,10 @@ $ passwd vk
 8. 安装 sudo
  要使用 sudo 命令提权的话需要安装 sudo 并且做相应配置
 ```
-$ pacman -S sudo
+pacman -S sudo
+#找到 root ALL=(ALL) ALL 并依葫芦画瓢添加 vk ALL=(ALL) ALL 即可。因为/etc/sudoers是只读文件，保存修改时需要":w!"强制写入
+vi /etc/sudoers
 ```
-`打开 /etc/sudoers 文件，找到 root ALL=(ALL) ALL 并依葫芦画瓢添加 vk ALL=(ALL) ALL 即可。`
 
 ### 九. 安装引导程序
 本文推荐 GRUB 作为引导程序

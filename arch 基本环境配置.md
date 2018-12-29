@@ -123,6 +123,8 @@ okular
 thunderbird
 # file manager
 thunar
+# markdown
+typora
 # 微信
 https://github.com/geeeeeeeeek/electronic-wechat
 ```

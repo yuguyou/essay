@@ -125,6 +125,8 @@ thunderbird
 thunar
 # markdown
 typora
+# 图形化文本编辑器
+leafpad
 # 微信
 https://github.com/geeeeeeeeek/electronic-wechat
 ```

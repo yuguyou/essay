@@ -1,4 +1,11 @@
 # arch 基本环境配置
+```
+pacman -Syy   同步软件包数据库
+pacman -Sy    仅同步源
+pacman -Syu   同步源，并更新系统
+pacman -Sc    清理/var/cache/pacman/pkg目录下的旧包
+pacman -Scc   清除所有下载的包和数据库
+```
 ### 一. 联网
 安装NetworkManager 以及 图形化前端来实现便捷的无线网络管理 ：  
 ```

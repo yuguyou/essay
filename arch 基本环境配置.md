@@ -128,7 +128,7 @@ pulseaudio pasystray paman paprefs pavucontrol pavumeter
 okular 
 # email
 thunderbird
-# file manager
+# 文件浏览器
 thunar
 # markdown
 typora
@@ -136,6 +136,8 @@ typora
 leafpad
 # 微信
 https://github.com/geeeeeeeeek/electronic-wechat
+# 自动挂载硬盘、U盘
+gvfs
 ```
 
 ### 八. 蓝牙

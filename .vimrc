@@ -1,6 +1,6 @@
 set tabstop=2 "TAB建宽度
-set shiftwidth=2 "统一缩进为4 
-set softtabstop=2 "统一缩进为4 
+set shiftwidth=2 "统一缩进为4
+set softtabstop=2 "统一缩进为4
 set list
 set listchars=tab:>-,trail:-
 
@@ -9,7 +9,7 @@ set helplang=cn
 set hls-
 set ignorecase
 
-set expandtab "将tab设置为四个空格 (%s/\t/    /g) 
+set expandtab "将tab设置为四个空格 (%s/\t/    /g)
 
 set autoindent "缩进值与上行相等
 set cindent "自动缩进

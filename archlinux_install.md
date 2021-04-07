@@ -64,7 +64,7 @@ parted /dev/sda
 ### 六. 格式化与挂载分区
 格式化
 ```
-mkfs.ext4 /dev/sda1
+mkfs.fat -F32 /dev/sda1
 mkfs.ext4 /dev/sda2
 mkswap /dev/sda3
 mkfs.ext4 /dev/sda4
@@ -81,7 +81,7 @@ swapon /dev/sda3
 ### 七. 安装基本系统
 使用 pacstrap 脚本，安装 base 组：
 ```
-# pacstrap -i /mnt base base-devel
+# pacstrap -i /mnt base linux-lts linu-firmware base-devel
 ```
 
 ### 八. 配置系统
@@ -160,7 +160,7 @@ $ grub-mkconfig -o /boot/grub/grub.cfg
 * UEFI 系统：
 ```bash
 $ pacman -S dosfstools grub efibootmgr
-$ grub-install --target=x86_64-efi --efi-directory=<EFI 分区挂载点> --bootloader-id=grub
+$ grub-install --target=x86_64-efi --efi-directory=</boot(EFI 分区挂载点)> --bootloader-id=grub
 $ grub-mkconfig -o /boot/grub/grub.cfg
 ``` 
 ### 十. 重启

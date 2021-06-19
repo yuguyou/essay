@@ -113,6 +113,8 @@ sudo pacman -S xfce4-settings
 sudo pacman -S xfce4-power-manager xfce4-goodies
 # 文件浏览
 sudo pacman -S thunar tumbler thunar-volman
+# 鼠标键盘驱动
+sudo pacman -S xf86-input-evdev
 ```
 
 ### 七. 安装常用软件
@@ -137,7 +139,17 @@ leafpad
 # 微信
 https://github.com/geeeeeeeeek/electronic-wechat
 # 自动挂载硬盘、U盘
-gvfs
+sudo pacman -S gvfs
+
+# wps office
+git clone https://aur.archlinux.org/wps-office-cn.git
+cd wps-office-cn
+makepkg -si
+
+# 系统时间同步
+sudo ntpdate cn.pool.ntp.org
+# 系统时间同步到硬件时间
+sudo hwclock --systohc
 ```
 
 ### 八. 蓝牙

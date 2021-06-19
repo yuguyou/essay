@@ -151,18 +151,42 @@ vi /etc/sudoers
 
 ### 九. 安装引导程序
 本文推荐 GRUB 作为引导程序
-* BIOS 系统：
+#### BIOS 系统：
 ```bash
 $ pacman -S grub os-prober
 $ grub-install --target=i386-pc [目标磁盘(/dev/sdX)]
 $ grub-mkconfig -o /boot/grub/grub.cfg
 ```
-* UEFI 系统：
+#### UEFI 系统：
 ```bash
 $ pacman -S dosfstools grub efibootmgr
 $ grub-install --target=x86_64-efi --efi-directory=</boot(EFI 分区挂载点)> --bootloader-id=grub
 $ grub-mkconfig -o /boot/grub/grub.cfg
-``` 
+```
+#### 添加windows引导
+挂载windows启动盘，在盘中搜索`bootmgfw.efi`文件
+```
+[root@arch c]# find -name "bootmgfw.efi"
+./Windows/Boot/EFI/bootmgfw.efi
+./Windows/Panther/Rollback/EFI/Microsoft/Boot/bootmgfw.efi
+```
+将`/Windows/Panther/Rollback/EFI/Microsoft/`目录拷贝到`/boot/EFI/`目录
+```
+cp -r /media/c/Windows/Panther/Rollback/EFI/Microsoft /boot/EFI/
+```
+在文件`/boot/grub/grub.cfg`中`30_os-prober`添加
+```
+### BEGIN /etc/grub.d/30_os-prober ###
+menuentry "Microsoft Windows10" {
+    insmod part_gpt
+    insmod fat
+    insmod chain
+    search --no-floppy --fs-uuid --set=root XXXX-XXXX(磁盘UUID)
+    chainloader /EFI/Microsoft/Boot/bootmgfw.efi
+}
+### END /etc/grub.d/30_os-prober ###
+```
+
 ### 十. 重启
 1. 输入 exit 或按 Ctrl+D 退出 chroot 环境。
 2. `umount -R /mnt` 手动卸载被挂载的分区：这有助于发现任何「繁忙」的分区，并通过 fuser(1) 查找原因。

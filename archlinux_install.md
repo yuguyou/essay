@@ -81,7 +81,7 @@ swapon /dev/sda3
 ### 七. 安装基本系统
 使用 pacstrap 脚本，安装 base 组：
 ```
-# pacstrap -i /mnt base linux-lts linu-firmware base-devel
+# pacstrap -i /mnt base linux-lts linux-firmware base-devel
 ```
 
 ### 八. 配置系统

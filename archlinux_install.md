@@ -136,11 +136,14 @@ $ passwd root
 7. 添加用户
 虽然你也可以直接用 root 用户，但是毕竟不安全，有些软件不能直接用 root 
 ```
+# 查看所有组
+$ cat /etc/group
+# 产看用户/组的id号
+$ id
 # wheel组用户才能通过su命令切换到root用户
 $ useradd -m -g users -G wheel -s /bin/bash vk
 $ passwd vk
 ```
-
 8. 安装 sudo
  要使用 sudo 命令提权的话需要安装 sudo 并且做相应配置
 ```

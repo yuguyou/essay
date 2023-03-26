@@ -4,9 +4,15 @@
 ```
 # 安装docker
 wget -qO- https://get.docker.com/ | sudo sh
-# docker-compose 安装
-sudo curl -L https://github.com/docker/compose/releases/download/1.23.2/run.sh > /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
+# 安装docker-compose
+# 设置docker开机启动
+$ systemctl enable docker
+# 查看所有组
+$ cat /etc/group
+# 产看用户/组的id号
+$ id
+将当前用户加入组docker
+$ gpasswd -a ${USER} docker
 ```
 docker-compose.yml配置
 ```

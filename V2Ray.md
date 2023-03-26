@@ -11,8 +11,10 @@ $ systemctl enable docker
 $ cat /etc/group
 # 产看用户/组的id号
 $ id
-将当前用户加入组docker
+# 将当前用户加入组docker
 $ gpasswd -a ${USER} docker
+# 重启服务器
+$ reboot
 ```
 docker-compose.yml配置
 ```

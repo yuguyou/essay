@@ -125,7 +125,7 @@ arandr
 # 安装网易云音乐
 netease-cloud-music
 # 声音软件
-pulseaudio pasystray paman paprefs pavucontrol pavumeter
+pulseaudio pasystray paprefs pavucontrol pavumeter
 # pdf
 okular 
 # email

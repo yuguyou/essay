@@ -3,7 +3,7 @@
 `https://www.iszy.cc/2019/02/18/docker-v2ray/`
 ```
 # 安装docker
-wget -qO- https://get.docker.com/ | sudo sh
+https://docs.docker.com/engine/
 # 安装docker-compose
 # 设置docker开机启动
 $ systemctl enable docker

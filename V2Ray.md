@@ -92,7 +92,7 @@ docker-compose相关命令
 ##### 2. 证书安装
 ```
 # 为域名获取证书
-$ yum install -y python36 && pip3 install certbot
+$ yum install -y python3xx && pip3 install certbot
 # 停止域名指向的服务器的80与443端口的服务后执行命令
 $ certbot certonly --standalone -d tlanyan.me -d www.tlanyan.me
 # 命令可查看获取到所有申请的证书及所在目录
@@ -107,7 +107,7 @@ systemctl restart nginx
 ```
 * 自动续期证书: 配置crontab任务，在/etc/crontab文件末添加一行，证书将每两个月自动续签一次
 ```
-0 0 0 */2 0 root systemctl stop nginx; /usr/bin/certbot renew; systemctl restart nginx
+0 0 1 */2 * root systemctl stop nginx; certbot renew; systemctl restart nginx;
 ```
 
 ##### 3. config.json配置

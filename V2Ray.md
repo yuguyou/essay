@@ -94,7 +94,7 @@ docker-compose相关命令
 # 为域名获取证书
 $ yum install -y python3xx && pip3 install certbot
 # 停止域名指向的服务器的80与443端口的服务后执行命令
-$ certbot certonly --standalone -d tlanyan.me -d www.tlanyan.me
+$ certbot certonly --standalone -d www.tlanyan.me
 # 命令可查看获取到所有申请的证书及所在目录
 $ certbot certificates
 ```

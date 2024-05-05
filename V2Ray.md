@@ -1,4 +1,12 @@
 # v2ray
+＃＃　selinux 引起无法启动:
+```
+临时关闭
+$ setenforce 0
+永久关闭
+修改/etc/selinux/config 文件
+将SELINUX=enforcing改为SELINUX=disabled
+```
 ## 一、v2ray docker安装启动服务端
 `https://www.iszy.cc/2019/02/18/docker-v2ray/`
 ```
@@ -158,15 +166,6 @@ systemctl restart nginx
 配置分为两个server段，第一段是所有http请求都导向https；第二段以ssl开头的配置都和证书相关：设置证书和私钥的位置、证书采用的协议、证书的加密算法等信息。
 为了增强安全性，`ssl_protocols`、`ssl_ciphers`和`ssl_perfer_server_ciphers`的配置建议采用以上配置。
 配置好以后，运行`nginx -t`命令查看有无错误。如果没有可运行`systemctl restart nginx`重新开启web服务。
-
-selinux 引起无法启动:
-```
-临时关闭
-$ setenforce 0
-永久关闭
-修改/etc/selinux/config 文件
-将SELINUX=enforcing改为SELINUX=disabled
-```
 
 ```
 server {

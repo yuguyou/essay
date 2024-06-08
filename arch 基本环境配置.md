@@ -162,7 +162,7 @@ vim /etc/bluetooth/main.conf
 # [Policy]
 # AutoEnable=true
 # 蓝牙图形管理
-sudo pacman -S blueberry
+sudo pacman -S blueman
 ```
 
 ### 九. 安装字体
